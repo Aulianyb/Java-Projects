@@ -40,22 +40,25 @@ public class lift {
         _moving_ = move; 
     }
 
-    static void operation(){
+    static void operation(lift lift_){
         Scanner scanline = new Scanner(System.in);
-
-        System.out.println("Naik atau Turun?");
-        String state = scanline.nextLine(); 
-        while (!state.equals("Naik") && !state.equals("Turun")){
-            System.out.println("INPUT INVALID : Naik atau Turun?");
-            state = scanline.nextLine();     
+        boolean run = true; 
+        while(run){
+            System.out.println(lift_._state_);
+            System.out.println("Naik atau Turun?");
+            lift_._state_ = scanline.nextLine(); 
+            while (!lift_._state_.equals("Naik") && !lift_._state_.equals("Turun")){
+                System.out.println("Level : "lift_._state_);
+                System.out.println("INPUT INVALID : Naik atau Turun?");
+                lift_._state_ = scanline.nextLine();     
+            }
+            System.out.println("ke lantai berapa?");
+            lift_._lantai_ = scanline.nextInt();    
         }
-        System.out.println("ke lantai berapa?");
-        int lantai = scanline.nextInt(); 
     }
 
     public static void main(String[] args){
-        lift lift_1 = new lift("Naik", 3, true);
-        System.out.println(lift_1);
-        operation();
+        lift lift_1 = new lift("Naik", 1, false);
+        operation(lift_1);
     }
 }
