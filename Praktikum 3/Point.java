@@ -14,4 +14,7 @@ public class Point {
     public double getLongitude(){
         return longitude;
     }
+
+    public void setX(int i) {
+    }
 }

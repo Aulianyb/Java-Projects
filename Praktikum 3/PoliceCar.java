@@ -11,6 +11,7 @@ public class PoliceCar implements TrackableVehicle {
         this.plateNumber = platenumber; 
         this.gpsPosition = gpsPosition; 
         this.speed = speed;
+        this.wheel = wheel; 
         this.fuelType = fuelType; 
         this.direction = "North";
         this.started = false;
