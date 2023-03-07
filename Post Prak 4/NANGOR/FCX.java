@@ -1,7 +1,7 @@
 /**
  * FCX.java
- * [Jelaskan kegunaan class ini]
- * @author [NIM] [Nama]
+ * Subclass FCX
+ * @author 18221066 Aulia Nadhirah Yasmin Badrulkamal
  */
 public class FCX extends Motor{//Jangan lupa tambahkan kata kunci untuk melakukan polymorphism antar kelas
     private int luggageCapacity;
@@ -23,15 +23,22 @@ public class FCX extends Motor{//Jangan lupa tambahkan kata kunci untuk melakuka
 
     public Boolean getStopingStatus(){
         //Mengembalikan status dari setingan mesin FCX untuk berhenti secara otomatis
-        return 
+        return isIdleStoping; 
     }    
     public String sound(){
         //Mengembalikan string berisi "Brmmm"
+        return "Brmmm"; 
     }
 
     public String printDescription(){
         //Mengembalikan string yang berformat dan berkondisi
         //Apabila isIdleStoping true, maka mengembalikan: "Motor ini memiliki a roda dengan kapasitas mesin b cc, memiliki kapasitas bagasi c liter, dan sedang dapat berhenti otomatis apabila didiamkan" dengan a adalah numberOfWheels, b adalah engineCapacity dan c adalah luggageCapacity
         //Apabila isIdleStoping false, maka mengembalikan: "Motor ini memiliki a roda dengan kapasitas mesin b cc, memiliki kapasitas bagasi c liter, dan sedang tidak dapat berhenti otomatis apabila didiamkan" dengan a adalah numberOfWheels, b adalah engineCapacity dan c adalah luggageCapacity
+        if (isIdleStoping){
+            return String.format("Motor ini memiliki %d roda dengan kapasitas mesin %d cc, memiliki kapasitas bagasi %d liter, dan sedang dapat berhenti otomatis apabila didiamkan", this.getNumberOfWheels(), this.getEngineCapacity(), luggageCapacity);
+        }
+        else{
+            return String.format("Motor ini memiliki %d roda dengan kapasitas mesin %d cc, memiliki kapasitas bagasi %d liter, dan sedang tidak dapat berhenti otomatis apabila didiamkan", this.getNumberOfWheels(), this.getEngineCapacity(), luggageCapacity);
+        }
     }
 }
