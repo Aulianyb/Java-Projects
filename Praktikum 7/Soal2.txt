@@ -1,0 +1,13 @@
+NO 2
+Buatlah sebuah program kalkulator yang bisa menerima kalkulasi sederhana. Meskipun sederhana, kalkulator akan menerapkan konsep Exception dimana kalkulator akan mengeluarkan pesan error ketika input tidak benar.
+Lengkapi dan submit file Calculator.java.
+
+File tersebut akan memiliki 3 buah kelas, yaitu Calculator, InvalidOperationException yang mengextend kelas Exception, dan InvalidDivisionByZero yang mengextend kelas Exception. InvalidOperationException akan menerima input berupa pesan custom ketika diinisiasi. Sedangkan, InvalidDivisionByZero akan mengembalikan string mutlak ketika pembagian 0.
+
+Kelas Calculator.java yang berisi fungsi calculate yang mereturn double.
+
+Fungsi tersebut akan menerima 3 buah parameter, yaitu a bertipe double yang berupa inputan pertama, b bertipe double yang berupa inputan kedua, dan c bertipe String berupa operator yang akan di eksekusi oleh kalkulator. (inputan pertama dan kedua berarti a-b, a+b, a*b, dan a/b)
+
+Pertama, Kalkulator akan memeriksa jenis operasi yang dimasukkan pada parameter. Apabila operasi yang diinput pengguna bukan +, -, *, atau /, maka kalkulator akan mengembalikan pesan error dari kelas InvalidOperationException.java yang berisi pesan dengan format "Invalid operation: " + operation;.
+
+Apabila kalkulator menerima input pembagian terhadap 0, maka kalkulator juag akan mengembalikan pesan error dari kelas InvalidDivisionByZero.java yang berisi pesan dengan format Tidak dapat melakukan pembagian terhadap 0.

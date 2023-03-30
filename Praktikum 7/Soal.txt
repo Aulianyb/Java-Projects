@@ -1,0 +1,21 @@
+NO 1
+Buatlah sebuah program robot sederhana yang dapat menerima perintah untuk melakukan aksi. Robot dapat menolak perintah apabila perintah yang diberikan tidak sesuai dengan daftar perintah yang dia ketahui.
+Lengkapi dan submit file Robot.java.
+File tersebut akan memiliki sebuah kelas, yaitu Robot.
+Kelas Robot memiliki atribut sebagai berikut:
+
+Atribut x bertipe integer yang melambangkan lokasi robot di sumbu X dengan nilai awal 0.
+
+Atribut y bertipe integer yang melambangkan lokasi robot di sumbu Y dengan nilai awal 0.
+
+Kelas Robot memiliki 2 buah method sebagai berikut:
+walk yang menerima 2 buah parameter, yaitu x bertipe integer dan y bertipe integer.
+talk yang menerima sebuah parameter, yaitu language bertipe string.
+receiveCommand yang menerima sebuah parameter, yaitu command bertipe string.
+
+Penjelasan masing-masing method sebagai berikut:
+Pada method walk, robot menerima parameter x dan y dan menambahkan nilai itu ke atribut x dan y yang dimilikinya. Robot lalu akan mengeprint pesan berupa Sedang berjalan menuju (x, y) dimana x dan y adalah nilai akhir setelah penambahan. Apabila nilai x atau y setelah ditambahkan akan melebihi 10, method ini melemparkan sebuah exception dengan pesan Tidak bisa jalan. Nilai x dan y tidak ditambahkan pada kasus ini.
+
+Robot hanya dapat berbicara menggunakan bahasa Indonesia dan bahasa Inggris saja. Oleh karena itu, pada pemanggilan method talk, apabila parameter language bukan Indonesia atau Inggris, robot akan melemparkan sebuah exception dengan pesan Tidak bisa berbicara dalam bahasa {language}. Apabila input valid, robot akan mengeprint pesan berupa Sedang berbicara dalam bahasa {language}.
+
+Method receiveCommand digunakan untuk mengecek apakah input command benar, input command yang valid adalah walk dan talk. Selain kedua command tersebut, method akan melemparkan exception dengan pesan Perintah {command} tidak dikenal.
