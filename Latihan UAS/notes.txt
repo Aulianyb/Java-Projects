@@ -1,0 +1,1 @@
+1. Cara membuat suatu exception class adalah dengan extends exception

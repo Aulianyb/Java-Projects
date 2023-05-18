@@ -36,6 +36,7 @@ public class MultithreadArraySum {
             }); 
             thread[i].start(); 
         } 
+        
 
         for (int j=0; j < nWorkers;j++){
             thread[j].join();
