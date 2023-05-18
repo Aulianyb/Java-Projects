@@ -1,5 +1,3 @@
-import java.util.EmptyStackException;
-
 public class Stack <T extends Displayable> {
     //kalau misalnya mau ada StackOverflowException harus ada limit ke Stacknya
     private T[] data;
@@ -11,8 +9,16 @@ public class Stack <T extends Displayable> {
     }
 
     public void push(T item){
-        data[top] = item; 
-        top += 1; 
+        try{
+            if (top == data.length){
+                throw new StackOverflowException(); 
+            } else{
+                data[top] = item; 
+                top += 1; 
+            }
+        } catch(StackOverflowException e){
+            System.out.println(e.getMessage()); 
+        }
     }
 
     public T pop(){
@@ -29,6 +35,7 @@ public class Stack <T extends Displayable> {
         }
         return x;  
         //dia ini menghasilkan T bukan int
+        //disini kalau misalnya ada StackEmptyException tetap kembalikan null
     }
 
     public void displayTop(){
