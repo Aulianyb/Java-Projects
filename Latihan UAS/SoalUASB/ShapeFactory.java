@@ -1,14 +1,17 @@
 package SoalUASB;
+import java.lang.reflect.*;;
+
 
 public class ShapeFactory {
     public Shape getShape(String shapeType){
         if (shapeType == null){
             return null; 
-        }
-        if (shapeType.equalsIgnoreCase("Circle")){
-            return new Circle(); 
-        } else if (shapeType.equalsIgnoreCase("Rectangle")){
-            return new Rectangle(); 
+        } else{
+            try{
+                return (Shape) Class.forName(shapeType).getConstructor().newInstance(); 
+            } catch (Exception e){
+                e.printStackTrace();
+            }
         }
         return null; 
     }
